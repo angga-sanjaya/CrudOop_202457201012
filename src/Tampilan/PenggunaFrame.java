@@ -469,11 +469,8 @@ public class PenggunaFrame extends javax.swing.JFrame {
         userTambah.setUserPassword(txKtSandi.getText());
         userTambah.setUserFullName(txNmLengkap.getText());
 
-        if (cbStatus.getSelectedItem() == "Active") {
-            userTambah.setUserStatus(1);
-        } else {
-            userTambah.setUserStatus(0);
-        }
+        String statusText = cbStatus.getSelectedItem().toString();
+        userTambah.setUserStatus(statusText.equalsIgnoreCase("Aktif") ? 1 : 0);
 
 //        String status = cbStatus.getSelectedItem().toString();
 //        byte statusByte;
@@ -505,11 +502,8 @@ public class PenggunaFrame extends javax.swing.JFrame {
         userUbah.setUserPassword(txKtSandi.getText());
         userUbah.setUserFullName(txNmLengkap.getText());
 
-        if (cbStatus.getSelectedItem() == "Active") {
-            userUbah.setUserStatus(1);
-        } else {
-            userUbah.setUserStatus(0);
-        }
+        String statusText = cbStatus.getSelectedItem().toString();
+        userUbah.setUserStatus(statusText.equalsIgnoreCase("Aktif") ? 1 : 0);
 
         userUbah.updateData();
 
