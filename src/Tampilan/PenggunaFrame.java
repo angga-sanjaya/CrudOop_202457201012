@@ -76,7 +76,7 @@ public class PenggunaFrame extends javax.swing.JFrame {
             ResultSet rsVar = userData.loadData();
 
             while (rsVar.next()) {
-                String status = (rsVar.getInt("userStatus") == 1) ? "Active" : "Non-Active";
+                String status = formatStatusText(rsVar.getInt("userStatus"));
 
                 model.addRow(new Object[]{
                     rsVar.getString("userName"),
@@ -89,6 +89,20 @@ public class PenggunaFrame extends javax.swing.JFrame {
         } catch (SQLException sQLException) {
             JOptionPane.showMessageDialog(null, "Error : " + sQLException.getMessage());
         }
+    }
+
+    private int getSelectedStatusValue() {
+        Object selectedStatus = cbStatus.getSelectedItem();
+
+        if (selectedStatus == null) {
+            return 0;
+        }
+
+        return selectedStatus.toString().equalsIgnoreCase("Aktif") ? 1 : 0;
+    }
+
+    private String formatStatusText(int statusValue) {
+        return statusValue == 1 ? "Aktif" : "Tidak Aktif";
     }
 
     /**
@@ -469,11 +483,7 @@ public class PenggunaFrame extends javax.swing.JFrame {
         userTambah.setUserPassword(txKtSandi.getText());
         userTambah.setUserFullName(txNmLengkap.getText());
 
-        if (cbStatus.getSelectedItem() == "Active") {
-            userTambah.setUserStatus(1);
-        } else {
-            userTambah.setUserStatus(0);
-        }
+        userTambah.setUserStatus(getSelectedStatusValue());
 
 //        String status = cbStatus.getSelectedItem().toString();
 //        byte statusByte;
@@ -505,11 +515,7 @@ public class PenggunaFrame extends javax.swing.JFrame {
         userUbah.setUserPassword(txKtSandi.getText());
         userUbah.setUserFullName(txNmLengkap.getText());
 
-        if (cbStatus.getSelectedItem() == "Active") {
-            userUbah.setUserStatus(1);
-        } else {
-            userUbah.setUserStatus(0);
-        }
+        userUbah.setUserStatus(getSelectedStatusValue());
 
         userUbah.updateData();
 

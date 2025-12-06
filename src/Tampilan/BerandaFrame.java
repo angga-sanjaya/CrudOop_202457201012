@@ -16,6 +16,17 @@ public class BerandaFrame extends javax.swing.JFrame {
         sesiApp();
     }
 
+    private void sesiApp() {
+        txNmPengguna.setText(SesiClass.getNama());
+        txNmPengguna.setEditable(false);
+
+        txPeran.setText(SesiClass.getStatus());
+        txPeran.setEditable(false);
+
+        txEmail.setText(SesiClass.getEmail());
+        txEmail.setEditable(false);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

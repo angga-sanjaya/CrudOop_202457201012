@@ -8,6 +8,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
 import Kelas.KategoriClass;
+import Kelas.PenggunaClass;
 
 public class KategoriFrame extends javax.swing.JFrame {
 

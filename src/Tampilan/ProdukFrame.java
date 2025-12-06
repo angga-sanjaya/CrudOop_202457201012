@@ -4,6 +4,7 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import Kelas.KategoriClass;
+import Kelas.PenggunaClass;
 import Kelas.ProdukClass;
 
 public class ProdukFrame extends javax.swing.JFrame {
