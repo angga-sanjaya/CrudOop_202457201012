@@ -76,7 +76,7 @@ public class PenggunaFrame extends javax.swing.JFrame {
             ResultSet rsVar = userData.loadData();
 
             while (rsVar.next()) {
-                String status = (rsVar.getInt("userStatus") == 1) ? "Active" : "Non-Active";
+                String status = (rsVar.getInt("userStatus") == 1) ? "Aktif" : "Tidak Aktif";
 
                 model.addRow(new Object[]{
                     rsVar.getString("userName"),
