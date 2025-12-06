@@ -27,6 +27,7 @@ public class PenggunaFrame extends javax.swing.JFrame {
         txEmail.setText(null);
         txNmLengkap.setText(null);
         cbStatus.setSelectedIndex(0);
+        txNmPengguna.setEditable(true);
     }
 
 // <editor-fold defaultstate="collapsed" desc="Kode Jaga-jaga">                                  
