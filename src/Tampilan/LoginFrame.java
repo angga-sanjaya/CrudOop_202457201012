@@ -165,7 +165,18 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
+        performLogin();
+    }//GEN-LAST:event_btLoginActionPerformed
+
+    private void txNmPenggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNmPenggunaActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_txNmPenggunaActionPerformed
+
+    private void txKtSandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txKtSandiActionPerformed
+        performLogin();
+    }//GEN-LAST:event_txKtSandiActionPerformed
+
+    private void performLogin() {
         // 1. Ambil input dari form
         String userName = txNmPengguna.getText();
         String password = new String(txKtSandi.getPassword());
@@ -201,18 +212,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     javax.swing.JOptionPane.ERROR_MESSAGE
             );
         }
-    }//GEN-LAST:event_btLoginActionPerformed
-
-    private void txNmPenggunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNmPenggunaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txNmPenggunaActionPerformed
-
-    private void txKtSandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txKtSandiActionPerformed
-        // TODO add your handling code here:
-        PenggunaClass userLog = new PenggunaClass();
-        userLog.setUserPassword(txKtSandi.getText());
-        userLog.loginApp();
-    }//GEN-LAST:event_txKtSandiActionPerformed
+    }
 
     /**
      * @param args the command line arguments
